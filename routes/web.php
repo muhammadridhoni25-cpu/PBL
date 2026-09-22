@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\DataAkademikController;
 
 Route::get('/', fn () => redirect()->route('buku.index'));
 Route::resource('buku', BukuController::class);
@@ -20,3 +21,4 @@ Route::delete('/portofolio/{id}', [PortofolioController::class, 'destroy'])->nam
 Route::get('/dashboard-lomba', function () {
     return view('portofolio.dashboard-lomba-mahasiswa');
 });
+Route::resource('data-akademik', DataAkademikController::class);
